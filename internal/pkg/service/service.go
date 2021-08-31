@@ -5,8 +5,8 @@ import (
 	"fmt"
 	"math/rand"
 
-	"github.com/bhmj/classico_layout/internal/html"
 	"github.com/bhmj/classico_layout/internal/pkg/config"
+	"github.com/bhmj/classico_layout/internal/pkg/html"
 	"github.com/bhmj/classico_layout/internal/pkg/types"
 )
 
