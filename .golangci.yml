@@ -1,0 +1,31 @@
+run:
+  tests: no
+linters:
+  enable-all: yes
+  disable:
+    - wsl
+    - lll
+    - godot
+    - maligned
+    - gci
+    - exhaustivestruct
+    - nlreturn
+    - interfacer
+    - golint
+    - scopelint
+    - revive
+linters-settings:
+  funlen:
+    lines: 80
+    statements: 60
+  tagliatelle:
+    # check the struck tag name case
+    case:
+      # use the struct field name to check the name of the struct tag
+      use-field-name: true
+      rules:
+        # any struct tag type can be used.
+        # support string case: `camel`, `pascal`, `kebab`, `snake`, `goCamel`, `goPascal`, `goKebab`, `goSnake`, `upper`, `lower`
+        json: snake
+issues:
+  exclude-use-default: yes
