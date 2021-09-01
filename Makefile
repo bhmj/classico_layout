@@ -23,6 +23,14 @@ lint:
 test:
 	go test ./...
 
-.PHONY: all build run lint test
+update-usage: build
+	head -n $(shell grep -n '## Usage' README.md | tr ':' ' ' | awk '{print $$1}') README.md > README.md.temp
+	echo >> README.md.temp
+	echo '```' >> README.md.temp
+	$(BINARY) --help  >> README.md.temp || true
+	echo '```' >> README.md.temp
+	mv -f README.md.temp README.md
+
+.PHONY: all build run lint test update-usage
 
 $(V).SILENT:
