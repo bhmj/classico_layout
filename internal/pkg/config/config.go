@@ -34,17 +34,17 @@ type ColorDefinition struct {
 	Pallets int    `long:"pallets" env:"PALLETS" description:"Number of pallets of this color"`
 }
 
-type Road struct {
-	Width int `long:"width" env:"WIDTH" description:"Width of the road in small piece numbers" default:"10"`
+type Pavement struct {
+	Width int `long:"width" env:"WIDTH" description:"Width of the pavement in small piece numbers" default:"10"`
 }
 
 // Config contains all parameters
 type Config struct {
-	ConfigFile string `long:"config-file" env:"CLASSICO_CONFIG_FILE" description:"Classico config file path (json and yaml formats supported)"`
-	Pallet     Pallet `env-namespace:"CLASSICO_PALLET" namespace:"pallet" group:"Pallet configuration"`
-	Road       Road   `env-namespace:"CLASSICO_ROAD" namespace:"road" group:"Road configuration"`
-	Color      Color  `env-namespace:"CLASSICO_COLOR" namespace:"color" group:"Color configuration"`
-	LogLevel   string `long:"log-level" env:"CLASSICO_LOG_LEVEL" description:"Log level" default:"info" choice:"debug" choice:"info" choice:"warn" choice:"error" choice:"dpanic" choice:"panic" choice:"fatal"` // nolint:staticcheck
+	ConfigFile string   `long:"config-file" env:"CLASSICO_CONFIG_FILE" description:"Classico config file path (json and yaml formats supported)"`
+	Pallet     Pallet   `env-namespace:"CLASSICO_PALLET" namespace:"pallet" group:"Pallet configuration"`
+	Pavement   Pavement `env-namespace:"CLASSICO_ROAD" namespace:"pavement" group:"Pavement configuration"`
+	Color      Color    `env-namespace:"CLASSICO_COLOR" namespace:"color" group:"Color configuration"`
+	LogLevel   string   `long:"log-level" env:"CLASSICO_LOG_LEVEL" description:"Log level" default:"info" choice:"debug" choice:"info" choice:"warn" choice:"error" choice:"dpanic" choice:"panic" choice:"fatal"` // nolint:staticcheck
 }
 
 // New returns instance of config

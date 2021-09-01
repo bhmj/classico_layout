@@ -26,7 +26,7 @@ func NewService(cfg *config.Config) Service {
 }
 
 func (s *service) GenerateMatrix() {
-	total := generateRows(nil, s.cfg.Road.Width)
+	total := generateRows(nil, s.cfg.Pavement.Width)
 
 	large, medium, small := s.cfg.Pallet.Large, s.cfg.Pallet.Medium, s.cfg.Pallet.Small
 
@@ -38,7 +38,7 @@ func (s *service) GenerateMatrix() {
 	if medium < *fewest {
 		fewest = &medium
 	}
-	limit := 8 * s.cfg.Road.Width / (((large + medium + small) - *fewest) / *fewest) / 5
+	limit := 8 * s.cfg.Pavement.Width / (((large + medium + small) - *fewest) / *fewest) / 5
 	*fewest = limit
 
 	var matrix []types.RowType
@@ -93,7 +93,7 @@ func (s *service) Run(ctx context.Context) {
 	var colorRemain [6]int
 	for ilayer := 0; ilayer < s.cfg.Pallet.Layers; ilayer++ {
 		fmt.Printf("layer %d of %d\n", ilayer, s.cfg.Pallet.Layers)
-		remLarge, remMedium, remSmall, layout := generateLayout(nil, large, medium, small, s.cfg.Road.Width, s.matrix, 0)
+		remLarge, remMedium, remSmall, layout := generateLayout(nil, large, medium, small, s.cfg.Pavement.Width, s.matrix, 0)
 		layout, colorRemain = paintLayout(layout, large, medium, small, remLarge, remMedium, remSmall, colorRemain)
 		large, medium, small = s.cfg.Pallet.Large+remLarge, s.cfg.Pallet.Medium+remMedium, s.cfg.Pallet.Small+remSmall
 		html.WriteLayout(f, shuffleLayout(layout), colorClass[ilayer%len(colorClass)], colorRemain)
