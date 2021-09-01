@@ -57,20 +57,18 @@ func (s *app) launch(ctx context.Context, cancel context.CancelFunc) {
 	// Main calculation
 	go func() {
 		defer wg.Done()
-		defer cancel()
 		srv.Run(ctx)
 	}()
 
 	// SIGTERM handler run
 	go func() {
-		defer wg.Done()
-		defer cancel()
 		ch := make(chan os.Signal, 1)
 		signal.Notify(ch, syscall.SIGINT, syscall.SIGTERM, syscall.SIGQUIT)
 		select {
 		case <-ctx.Done():
 			return
 		case signal := <-ch:
+			cancel()
 			s.log.L().Info(fmt.Errorf("%w: %s", errSignalReceived, signal))
 		}
 	}()

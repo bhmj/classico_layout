@@ -26,7 +26,10 @@ func CreateOutputFile(fname string, title string) (*os.File, error) {
 
 func WriteLayout(f *os.File, layout []types.RowType, colorClass string, colorRemain [6]int) {
 	fmt.Fprintf(f, `<div class="%s">`, colorClass)
-	for _, row := range layout {
+	for irow, row := range layout {
+		if irow > 0 {
+			fmt.Fprintln(f, "<br>")
+		}
 		for _, elem := range row.Pieces {
 			var name string
 			switch elem {
@@ -45,17 +48,16 @@ func WriteLayout(f *os.File, layout []types.RowType, colorClass string, colorRem
 			}
 			fmt.Fprintf(f, `<img src="img/%s.png">`, name)
 		}
-		fmt.Fprintln(f, "<br>")
 	}
-	fmt.Fprintf(f, "</div>\n")
+	fmt.Fprintf(f, `<span style="margin: 0 0 0 20px;">`)
 	if colorClass != "" {
-		fmt.Fprintf(f, `<div style="margin: 10px 0 20px;">`)
 		imgs := []string{"large", "medium", "small", "large2", "medium2", "small"}
 		for i := 0; i < 6; i++ {
 			if colorRemain[i] > 0 {
 				fmt.Fprintf(f, `<img src="img/%s.png"> = %d&nbsp;&nbsp;&nbsp;`, imgs[i], colorRemain[i])
 			}
 		}
-		fmt.Fprintf(f, "</div>")
 	}
+	fmt.Fprintf(f, "</span>")
+	fmt.Fprintf(f, "</div>\n")
 }

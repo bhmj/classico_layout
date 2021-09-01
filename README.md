@@ -25,21 +25,7 @@ git clone git@github.com:bhmj/classico_layout.git
 
 ## Example of layout generated
 
-<img src="img/small.png"><img src="img/medium.png"><img src="img/large.png"><img src="img/medium2.png"><img src="img/medium2.png">   
-<img src="img/large2.png"><img src="img/small.png"><img src="img/large.png"><img src="img/large2.png">   
-<img src="img/large2.png"><img src="img/large.png"><img src="img/small2.png"><img src="img/large.png">   
-<img src="img/medium.png"><img src="img/small2.png"><img src="img/medium.png"><img src="img/medium2.png"><img src="img/large2.png">   
-<img src="img/large2.png"><img src="img/large.png"><img src="img/large.png"><img src="img/small.png">   
-<img src="img/medium2.png"><img src="img/medium2.png"><img src="img/medium.png"><img src="img/large2.png"><img src="img/small2.png">   
-<img src="img/large2.png"><img src="img/small2.png"><img src="img/medium.png"><img src="img/medium2.png"><img src="img/medium.png">   
-<img src="img/large2.png"><img src="img/small.png"><img src="img/large.png"><img src="img/large.png">   
-<img src="img/medium2.png"><img src="img/large.png"><img src="img/medium2.png"><img src="img/large.png">   
-<img src="img/medium.png"><img src="img/small2.png"><img src="img/medium2.png"><img src="img/small.png"><img src="img/medium.png"><img src="img/medium.png">   
-<img src="img/large2.png"><img src="img/large2.png"><img src="img/medium2.png"><img src="img/medium.png">   
-<img src="img/large2.png"><img src="img/small2.png"><img src="img/medium2.png"><img src="img/medium.png"><img src="img/medium2.png">   
-<img src="img/large.png"><img src="img/large2.png"><img src="img/large.png"><img src="img/small.png">   
-
-
+<img src="img/layout_example.png">
 
 ## Roadmap
 - [x] configurable number of large, medium and small pieces in one pallet layer

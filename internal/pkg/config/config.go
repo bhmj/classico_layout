@@ -18,9 +18,9 @@ import (
 var errConfigTypeNotSupported = errors.New("unsupported config file type")
 
 type Pallet struct {
-	Large  int `long:"large" env:"LARGE" description:"Number of large pieces in one layer" default:"32"`
-	Medium int `long:"medium" env:"MEDIUM" description:"Number of medium pieces in one layer" default:"32"`
-	Small  int `long:"small" env:"SMALL" description:"Number of small pieces in one layer" default:"8"`
+	Large  int `long:"large" env:"LARGE" description:"Number of large pieces in one layer" default:"16"`
+	Medium int `long:"medium" env:"MEDIUM" description:"Number of medium pieces in one layer" default:"16"`
+	Small  int `long:"small" env:"SMALL" description:"Number of small pieces in one layer" default:"4"`
 	Layers int `long:"layers" env:"LAYERS" description:"Number of layers on a pallet" default:"12"`
 }
 
