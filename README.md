@@ -20,6 +20,8 @@ git clone git@github.com:bhmj/classico_layout.git
 ## Configuration & run
 
 ```
+make build
+
 ./build/classico_layout --pallet.large=16 --pallet.medium=16 --pallet.small=4
 ```
 
