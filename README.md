@@ -7,7 +7,7 @@ This program generates tile layouts for Classico tiles. Classico tiles (also kno
 The number of tiles on a pallet can be different between manufacturers. Here's an example of one layer of tiles on a pallet:  
 ![pallet layer](./img/classico_pallet.jpg)
 
-Also, the pavement can consist of tiles of different color so we need to mix them is a proper ratio.
+Also, the pavement can consist of tiles of different color so we need to mix them in a proper ratio.
 
 The task is to layout tiles within a given pavement width so that the remainder of tiles is minimum.
 
