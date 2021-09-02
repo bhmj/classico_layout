@@ -81,7 +81,7 @@ Help Options:
 5. Submit a pull request :)
 
 ## Licence
-[MIT](http://opensource.org/licenses/MIT)
+[EUPL 1.2](https://joinup.ec.europa.eu/sites/default/files/custom-page/attachment/2020-03/EUPL-1.2%20EN.txt)
 
 ## Author
 Michael Gurov aka BHMJ
