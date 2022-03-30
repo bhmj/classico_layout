@@ -4,7 +4,7 @@
 This program generates tile layouts for Classico tiles. Classico tiles (also known as Old Town) is a set of tiles of 3 sizes: small, medium and large. The width ratio is 1:2:3 and the height is 2 for all tiles. The tiles look like this:  
 ![small tile](./img/small.png) ![medium tile](./img/medium.png) ![large tile](./img/large.png)
 
-The number of tiles on a pallet can be different between manufacturers. Here's an example of one layer of tiles on a pallet:  
+The number of tiles on a pallet can be different among manufacturers. Here's an example of one layer of tiles on a pallet:  
 ![pallet layer](./img/classico_pallet.jpg)
 
 Also, the pavement can consist of tiles of different color so we need to mix them in a proper ratio.
